@@ -53,14 +53,6 @@ This project implements a sophisticated genetic analysis pipeline that:
 - Comprehensive logging system
 - Model versioning and persistence
 
-## Installation
-
-```bash
-git clone https://github.com/username/GeneticVariantAnalysis.git
-cd GeneticVariantAnalysis
-pip install -r requirements.txt
-```
-
 ### Dependencies
 ```python
 pandas>=1.2.0
