@@ -1,0 +1,40 @@
+pipeline:
+  version: "2.2.0"
+  parallel_processing: true
+  gpu_enabled: auto  # 'auto', 'true', or 'false'
+  logging_level: INFO
+
+data_processing:
+  min_call_rate: 0.95
+  maf_threshold: 0.01
+  hwe_pvalue: 0.001
+  batch_size: 10000
+  memory_limit: "8GB"
+
+quality_control:
+  population_stratification: true
+  batch_effect_correction: true
+  sex_check: true
+  relatedness_check: true
+  outlier_detection: true
+
+machine_learning:
+  model_type: "ensemble"  # 'ensemble', 'deep_learning', or 'statistical'
+  cross_validation_folds: 5
+  feature_selection:
+    method: "chi2"
+    n_features: 100
+  hyperparameter_tuning:
+    method: "bayesian"
+    n_trials: 50
+
+validation:
+  test_size: 0.2
+  validation_populations: ["EUR", "EAS", "AFR", "AMR", "SAS"]
+  confidence_threshold: 0.95
+
+reporting:
+  report_format: ["pdf", "html"]
+  include_plots: true
+  clinical_significance_threshold: 0.05
+  risk_stratification_levels: 3
