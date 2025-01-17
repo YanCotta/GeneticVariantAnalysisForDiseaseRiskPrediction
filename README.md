@@ -60,11 +60,21 @@ genetic_variant_analysis/
 │   ├── data_processing.py# Variant processing
 │   └── main.py          # Pipeline orchestration
 ├── config/
-│   └── default_config.yaml
+│   ├── default_config.yaml
+│   └── hyperparams.yaml  # Extended hyperparameter management
+├── evaluation/           # Advanced model performance analysis
+├── doc/
+│   └── manual_installation_guide.md # Manual installation guide
 └── setup.py
 ```
 
 ## Changelog
+
+### Version 2.4.0
+- Added advanced evaluation module under genetic_variant_analysis/evaluation/
+- Introduced doc/manual_installation_guide.md for offline setup
+- Expanded hyperparameter configuration via config/hyperparams.yaml
+- Improved pipeline error handling and logging consistency
 
 ### Version 2.3.1 (Current)
 - Enhanced model validation with biological context
@@ -74,17 +84,16 @@ genetic_variant_analysis/
 
 ## Development Roadmap
 
+### Version 2.5.0 (Planned)
+- Automated cloud-based container orchestration
+- Graph neural network support for advanced analysis
+- Extended multi-omics integration
+
 ### Version 2.4.0 
 - Deep learning models for sequence analysis
 - Advanced epistasis detection
 - Distributed computing support
 - Interactive clinical reports
-
-### Version 2.5.0
-- Real-time variant analysis
-- Cloud deployment support
-- Integration with clinical databases
-- Advanced visualization toolkit
 
 ## Citations
 

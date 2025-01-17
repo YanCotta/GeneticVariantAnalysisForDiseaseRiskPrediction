@@ -552,50 +552,24 @@ def generate_clinical_visualization(data: pd.DataFrame,
     plt.savefig(f"{output_dir}/variant_analysis_{datetime.date.today()}.pdf",
                 metadata={'Creator': 'Clinical Variant Pipeline v2.0'})
 
+from genetic_variant_analysis.evaluation.model_evaluation import evaluate_model_advanced
+
+def run_full_pipeline(config: PipelineConfig, input_file: str):
+    """
+    Orchestrates data loading, preprocessing, training, and evaluation.
+    """
+    logger.info("Starting full pipeline with advanced evaluation.")
+    data = load_variant_data(input_file)
+    if data is not None:
+        data, qc_metrics = preprocess_data(data, config)
+        X, y, selected_features = select_features(data)
+        trained_model, perf_metrics, (X_test, y_test) = train_classifier(X, y, config)
+
+        logger.info("Running advanced evaluation metrics.")
+        evaluate_model_advanced(trained_model, X_test, y_test)
+        return trained_model
+
 if __name__ == "__main__":
-    """
-    Main pipeline execution.
-    
-    Pipeline Steps:
-    -------------
-    1. Data Loading:
-    - Validate input data
-    - Check data quality
-    - Initialize components
-    
-    2. Analysis:
-    - Quality control
-    - Feature selection
-    - Model training
-    
-    3. Reporting:
-    - Generate visualizations
-    - Create reports
-    - Save results
-    
-    TODO:
-    - Add command-line interface
-    - Implement configuration validation
-    - Add progress tracking
-    - Implement error recovery
-    """
-    logger.info("Starting clinical variant analysis pipeline")
-    
-    try:
-        # Instead of loading a non-existent config file, just instantiate directly
-        config = PipelineConfig()
-        
-        # Load and preprocess data
-        data = load_variant_data("variants.csv")
-        if data is not None:
-            data, qc_metrics = preprocess_data(data, config)
-            X, y, selected_features = select_features(data)
-            
-            # Train and evaluate
-            model, performance_metrics, (X_test, y_test) = train_classifier(X, y, config)
-            evaluate_model(model, X_test, y_test)
-            
-            logger.info("Analysis completed successfully.")
-    except Exception as e:
-        logger.error(f"Pipeline failed: {e}", exc_info=True)
-        raise
+    logger.info("Kickstarting the pipeline via main entry point.")
+    config = PipelineConfig()
+    run_full_pipeline(config, "variants.csv")
