@@ -70,13 +70,14 @@ genetic_variant_analysis/
 
 ## Changelog
 
-### Version 2.4.0
+### Version 2.5.0 (Current)
 - Added advanced evaluation module under genetic_variant_analysis/evaluation/
 - Introduced doc/manual_installation_guide.md for offline setup
 - Expanded hyperparameter configuration via config/hyperparams.yaml
 - Improved pipeline error handling and logging consistency
+- Improved future version's outline in changelog
 
-### Version 2.3.1 (Current)
+### Version 2.3.1 
 - Enhanced model validation with biological context
 - Improved documentation and type hints
 - Added cross-population validation
@@ -84,16 +85,38 @@ genetic_variant_analysis/
 
 ## Development Roadmap
 
-### Version 2.5.0 (Planned)
-- Automated cloud-based container orchestration
-- Graph neural network support for advanced analysis
-- Extended multi-omics integration
+### Version 3.0.0 (Planned)
 
-### Version 2.4.0 
-- Deep learning models for sequence analysis
-- Advanced epistasis detection
-- Distributed computing support
-- Interactive clinical reports
+#### Biological Validation:
+- Implement pathway analysis
+- Add phenotype correlation
+- Include population frequency validation
+
+#### Statistical Rigor:
+- Multiple testing correction
+- Power analysis
+- Effect size calculation
+
+#### Clinical Utility:
+- Risk score interpretation
+- Clinical guidelines integration
+- Patient report generation
+
+#### Implementation Priority:
+- Complete unimplemented methods
+- Add comprehensive tests
+- Optimize performance
+- Add clinical reporting
+
+#### Code Quality:
+- Add docstring tests
+- Implement continuous integration
+- Add performance benchmarks
+
+#### Documentation:
+Add example workflows
+Include validation studies
+Document limitations
 
 ## Citations
 
