@@ -1,8 +1,38 @@
-# Genetic Variant Analysis Pipeline for Disease Risk Prediction
+<div align="center">
 
-A production-grade bioinformatics pipeline for analyzing genetic variants and predicting disease risks, incorporating advanced statistical genetics and machine learning approaches.
+# 🧬 Genetic Variant Analysis Pipeline
 
-## Scientific Background
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![GPU Support](https://img.shields.io/badge/GPU-supported-green.svg)](docs/gpu_setup.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen.svg)](docs/)
+
+Advanced bioinformatics pipeline for genetic variant analysis and disease risk prediction, 
+powered by statistical genetics and machine learning.
+
+[Key Features](#key-features) •
+[Installation](#installation) •
+[Quick Start](#quick-start) •
+[Documentation](docs/) •
+[Contributing](CONTRIBUTING.md)
+
+</div>
+
+---
+
+## 📋 Table of Contents
+- [Scientific Background](#-scientific-background)
+- [Key Features](#-key-features)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Project Structure](#-project-structure)
+- [Changelog](#-changelog)
+- [Development Roadmap](#-development-roadmap)
+- [Contributing](#-contributing)
+- [Citations](#-citations)
+- [License](#-license)
+
+## 🔬 Scientific Background
 
 This pipeline implements state-of-the-art methods for:
 - Population stratification correction using principal component analysis
@@ -10,7 +40,7 @@ This pipeline implements state-of-the-art methods for:
 - Polygenic risk score calculation with validated weights
 - Cross-population validation to ensure robust predictions
 
-## Key Features
+## ⭐ Key Features
 
 ### Data Processing
 - Automated QC with configurable thresholds
@@ -30,7 +60,7 @@ This pipeline implements state-of-the-art methods for:
 - Population-specific risk assessments
 - Confidence intervals for predictions
 
-## Installation
+## 🚀 Installation
 
 ```bash
 # Create virtual environment
@@ -41,34 +71,35 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -e ".[gpu]"
 ```
 
-## Quick Start
+## 🏃 Quick Start
 
 ```python
 from genetic_variant_analysis.core import VariantAnalysisPipeline
 
+# Initialize and run the pipeline
 pipeline = VariantAnalysisPipeline()
 results = pipeline.run("variants.vcf")
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 genetic_variant_analysis/
-├── core/
-│   ├── utils.py          # Core utilities and QC
-│   ├── model_training.py # ML implementation
+├── core/                 # Core implementation
+│   ├── utils.py         # Core utilities and QC
+│   ├── model_training.py# ML implementation
 │   ├── data_processing.py# Variant processing
-│   └── main.py          # Pipeline orchestration
-├── config/
+│   └── main.py         # Pipeline orchestration
+├── config/              # Configuration files
 │   ├── default_config.yaml
-│   └── hyperparams.yaml  # Extended hyperparameter management
-├── evaluation/           # Advanced model performance analysis
-├── doc/
-│   └── manual_installation_guide.md # Manual installation guide
+│   └── hyperparams.yaml # Extended hyperparameter management
+├── evaluation/          # Advanced model performance analysis
+├── doc/                # Documentation
+│   └── manual_installation_guide.md
 └── setup.py
 ```
 
-## Changelog
+## 📝 Changelog
 
 ### Version 2.5.0 (Current)
 - Added advanced evaluation module under genetic_variant_analysis/evaluation/
@@ -83,7 +114,7 @@ genetic_variant_analysis/
 - Added cross-population validation
 - Expanded clinical reporting
 
-## Development Roadmap
+## 🛣️ Development Roadmap
 
 ### Version 3.0.0 (Planned)
 
@@ -118,9 +149,17 @@ Add example workflows
 Include validation studies
 Document limitations
 
-## Citations
+## 👥 Contributing
 
-Please cite this work as:
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests, report issues, and contribute to the project.
+
+### Development Setup
+1. Fork the repository
+2. Create a new branch
+3. Make your changes
+4. Submit a pull request
+
+## 📚 Citations
 
 ```bibtex
 @software{genetic_variant_analysis,
@@ -132,7 +171,18 @@ Please cite this work as:
 }
 ```
 
-## License
+## 📄 License
 
-MIT License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+**Made with ❤️ by the Genetic Variant Analysis Team**
+
+[Report Bug](https://github.com/YanCotta/GeneticVariantAnalysisForDiseaseRiskPrediction/issues) •
+[Request Feature](https://github.com/YanCotta/GeneticVariantAnalysisForDiseaseRiskPrediction/issues)
+
+</div>
 
